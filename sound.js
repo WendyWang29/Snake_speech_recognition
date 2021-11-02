@@ -13,3 +13,7 @@ export function kick() {
     o.start(now)
     o.stop(now+0.5)
 }
+
+export function bump() {
+    kick()
+}

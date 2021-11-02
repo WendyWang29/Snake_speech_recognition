@@ -1,5 +1,6 @@
 import { onSnake, expandSnake } from './snake.js'
 import {randomGridPosition} from './grid.js'
+import { bump } from './sound.js'
 
 // NB: grid starts at 1,1 not 0,0.
 
@@ -10,6 +11,7 @@ const EXPANSION_RATE = 1
 
 export function update() {
     if (onSnake(food)) {
+        bump()
         expandSnake(EXPANSION_RATE)
         food = getRandomFoodPosition()
     }

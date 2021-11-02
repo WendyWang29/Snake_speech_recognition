@@ -1,6 +1,7 @@
 import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, getSnakeHead, snakeIntersection} from './snake.js'
 import { update as updateFood, draw as drawFood } from './food.js'
-import {outsideGrid} from './grid.js'
+import { outsideGrid } from './grid.js'
+import { oops } from './sound.js'
 
 let lastRenderTime = 0
 //how many times does the snake move per second
@@ -13,7 +14,11 @@ const gameBoard = document.getElementById('game-board')
 function main (currentTime) {
 
     if (gameOver) {
-        return alert('you lose')
+        oops()
+        setTimeout(function(){alert("You lose!")}, 500)
+        
+        return
+        //return alert('you lose')
     } 
 
      // 1) tell the browser we want to perform an animation. We pass a function (main itself) that updates the frame

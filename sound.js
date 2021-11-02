@@ -17,3 +17,8 @@ export function kick() {
 export function bump() {
     kick()
 }
+
+export function oops() {
+    const audio = new Audio("./oops.wav")
+    audio.play()
+}

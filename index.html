@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;     
+            margin: 0;
+            background-color:darkolivegreen;   
+        }
+
+        #game-board {
+            background-color: rgb(207, 225, 246);
+            width: 100vmin;
+            height: 100vmin;
+            display: grid;
+            grid-template-rows: repeat(21, 1fr);
+            grid-template-columns: repeat(21, 1fr);
+        }
+
+        .snake {
+            background-color: rgb(91, 174, 241);
+            border: .35vmin solid rgb(0, 0, 0);
+        }
+
+        .food {
+            background-color: rgb(255, 174, 0);
+            border: .35vmin solid rgb(0, 0, 0);
+        }
+
+        
+    </style>
+    <script src="game.js" defer type = "module"></script>
+</head>
+<body>
+    <!-- we'll use css's grid-->
+    <div id = "game-board"></div>
+</body>
+</html>
+
+<!-- vmin is used to always have a square shape as large as possible to fill the entire screen-->
+<!-- we want 21x21  cells and we want to code to compute by itself the dimensions in px-->
